@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+<section class="articles">
+{% for article in articles %}
+    <h2>{{ article.title }}</h2>
+    <div class="metadata">
+        Ecrit le {{ article.createdAt|date('d/m/Y') }}
+
+    </div>
+    <div class="content">
+        <p> {{ article.content }} </p>
+        <img src ="{{ article.image }}" alt="" >
+        <p>  </p>
+    </div>
+
+{% endfor %}
+</section>
+{% endblock %}
